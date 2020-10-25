@@ -13,22 +13,29 @@ public class Main {
         ArrayList<String> wordsArray = new ArrayList<>();
         Map<String, Integer> wordsMap = new HashMap<>();
 
-        if(args.length > 1) {
-            System.out.println("\nThere must be only one argument.\n");
+        if (args.length != 1) {
+            System.out.println("\nThere must be one argument!\n");
             return;
         }
 
         String programArgument = args[0];
+
+        if (!programArgument.endsWith(".txt")) {
+            System.out.println("File must have .txt extension!");
+            return;
+        }
 
         FileReader file = new FileReader(programArgument);
         StreamTokenizer st = new StreamTokenizer(file);
 
         System.out.println("\nPath to the text file: " + programArgument);
 
+        st.ordinaryChar('\''); // Fixes ' symbol problem. Maybe in Windows system won't appear.
+
         while ((st.nextToken()) != StreamTokenizer.TT_EOF) {
             if (st.ttype == StreamTokenizer.TT_WORD) {
-                String word = "";
-                if(st.sval.endsWith(".")) {
+                String word;
+                if (st.sval.endsWith(".")) {
                     word = st.sval.replace(".", "");
                 } else word = st.sval;
 
