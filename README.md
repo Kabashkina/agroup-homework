@@ -36,7 +36,7 @@ IntelliJ IDEA 2020.1 Ultimate Edition
 ## What was done?
 Program works with .txt format files. Program was tested with Cyrillic and English ASCII symbols. There are two .txt files, with example texts, in root folder (newTestFile.txt and cleanCode.txt). Program prints given in arguments path, counts words in file, prints list of all words in file, sorts and count occurrences of words and prints in specific order.
 
-In code there is variant with case-insensitive option. If you need case-sensitive option, comment line number 36.
+In code there is variant with case-insensitive option. If you need case-sensitive option, comment line number 43.
 
 
 
